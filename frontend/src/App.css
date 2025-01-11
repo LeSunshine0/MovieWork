@@ -1,0 +1,462 @@
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2c3e50;
+  border-bottom: 1px solid #34495e;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 64px;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: #34495e;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.nav-links a.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+}
+
+.auth-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Center the welcome text separately */
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.movie-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 1rem;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  padding: 1rem;
+  margin: 0;
+  min-height: 60px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.movie-card p {
+  padding: 0 1rem 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.dashboard {
+  flex: 1;
+  padding: 2rem;
+  margin-top: 1rem;
+  color: #333;
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem 0;
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  text-align: left;
+  color: #333;
+}
+
+.rating {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.movie-card .rating {
+  position: relative;
+  display: inline-block;
+  margin: 0 1rem;
+  background: none;
+  padding: 0;
+}
+
+/* Add specific style for trending rating overlay if needed */
+.trending .movie-card .rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.trending-header {
+  margin-bottom: 2rem;
+}
+
+.trending-subtext {
+  color: #666;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.recommended-header {
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+
+.recommended-subtext {
+  color: #f9f9f9;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.movie-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.movie-rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #f39c12;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #dc3545;
+  padding: 1rem;
+  text-align: center;
+  background: #f8d7da;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.rated-page {
+  flex: 1;
+  padding: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem 0;
+  margin: 0;
+}
+
+.search-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.search-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto 2rem auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.rating-input {
+  margin: 1rem;
+}
+
+.rating-input select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #f39c12;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.rating-input select:hover {
+  background: #e67e22;
+}
+
+.rating-input select option {
+  background: white;
+  color: #333;
+  padding: 10px;
+}
+
+.rated-movies-section {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.search-form button:hover {
+  background: #2980b9;
+}
+
+.search-form button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Update search results grid */
+.search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Update movie cards in search results */
+.search-results .movie-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-results .movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Make headings consistent */
+.search-section h2,
+.rated-movies-section h2 {
+  text-align: left;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+/* Content container for proper width */
+.content-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+/* Update headers to align with movie grid */
+.trending-header,
+.recommended-header {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.trending-header h2,
+.recommended-header h2 {
+  margin: 0;
+  text-align: left;
+  color: #333;
+}
+
+.trending-subtext,
+.recommended-subtext {
+  color: #666;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+/* Update search section headers to match */
+.search-section h2,
+.rated-movies-section h2 {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto 2rem auto;
+  text-align: left;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.rating-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rating-select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background: #f39c12;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  height: 38px;
+}
+
+.submit-rating {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  height: 38px;
+}
+
+.submit-rating:hover {
+  background: #27ae60;
+}
+
+.submit-rating:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Add specific style for search results movie titles */
+.search-results .movie-card h3 {
+  color: #333;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.already-rated {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.delete-rating {
+  padding: 0.5rem 1rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.delete-rating:hover {
+  background: #c0392b;
+}
+
