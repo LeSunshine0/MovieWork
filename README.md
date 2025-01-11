@@ -4,7 +4,8 @@ This is a movie app that will show all trending movies at the moment as well as 
 start frontend: 
 cd into frontend
 then, "yarn"
-"yarn dev"
+then, "yarn dev"
+copy and paste "http://localhost:5173/"
 
 In seperate terminal to start server
 cd into server
