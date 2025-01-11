@@ -6,6 +6,6 @@ cd into frontend
 then, "yarn"
 "yarn dev"
 
-start server
+In seperate terminal to start server
 cd into server
 then, "npm run dev"
